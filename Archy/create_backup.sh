@@ -12,6 +12,7 @@ FILE_AWESOME="$DIR_HOME/.config/awesome"
 FILE_ZSH="$DIR_HOME/.zshrc"
 FILE_CUSTOM_SHELL="$DIR_HOME/.custom"
 FILE_SUBL="$DIR_HOME/.config/sublime-text-3/Packages/User"
+FILE_XMODMAP="$DIR_HOME/.Xmodmap"
 
 # Conkyrc copy, a single file
 cp $FILE_CONKY $DIR_BACKUPS && echo -e "Conky file copied" ||echo -e "\033[33;35mError: Conky file not found :s";
@@ -27,3 +28,6 @@ cp -R $FILE_CUSTOM_SHELL $DIR_BACKUPS && echo -e "Custom shell files copied" ||e
 
 # Sublime User files directory (user settings, macros, other configs live there)
 cp -R $FILE_SUBL $DIR_BACKUPS && echo -e "Sublime Text files copied" ||echo -e "\033[33;35mError: Sublime Text files not found :s";
+
+# Xmodmap, for ESC on capslock, rigth meta-4 and ñ on jp keyboard
+cp $FILE_XMODMAP $DIR_BACKUPS && echo -e "Xmod file copied" ||echo -e "\033[33;35mError: Xmod file not found :s";

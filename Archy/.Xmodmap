@@ -1,0 +1,7 @@
+! Changes BloqMayus to ESC,
+! Context-Menu for rigth meta-4,
+! and That katakana key for ñ
+clear    Lock
+keycode 66   = Escape
+keycode 135  = Super_R
+keycode 100  = ntilde
