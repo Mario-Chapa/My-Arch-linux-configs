@@ -1,0 +1,31 @@
+{
+	"installed_packages":
+	[
+		"BufferScroll",
+		"ColorSchemeEditor",
+		"Jedi - Python autocompletion",
+		"LaTeXTools",
+		"MarkdownEditing",
+		"Missing Palette Commands",
+		"NASM x86 Assembly",
+		"OpenCL",
+		"PackageResourceViewer",
+		"PlainTasks",
+		"Pylinter",
+		"Python Improved",
+		"SideBarEnhancements",
+		"Status Bar Time",
+		"Sublime Bookmarks",
+		"SublimeCodeIntel",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-chktex",
+		"SublimeLinter-flake8",
+		"SublimeLinter-ruby",
+		"Theme - Flatland",
+		"Theme - Soda",
+		"Theme - Sodarized",
+		"VAlign",
+		"WordCount"
+	]
+}

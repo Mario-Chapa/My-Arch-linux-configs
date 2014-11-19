@@ -1,0 +1,16 @@
+{
+// Clock type as sublime text uptime: 0 - time, 1 - sublime uptime
+"StatusBarClock_type": 0,
+
+// Clock update interval (in millisecond)
+"StatusBarClock_Interval": 36000,
+
+// If true then clock will only be displayed when there is a file in view
+"StatusBarClock_display_onlyinview": true,
+
+// Time format, for "%a - %H:%M:%S" -> Mon - 22:58:24
+"StatusBarTime_format": "%H:%M",
+
+// Stick the clock on the left side of the status bar
+"StatusBarClock_lefty": true
+}

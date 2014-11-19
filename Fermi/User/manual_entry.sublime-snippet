@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+@MANUAL{${1:key},
+   author = "${2:author}",
+   title = "${3:title}",
+   organization = "${4:organization}",
+   address = "${5:address}",
+   edition = "${6:edition}",
+   month = "${7:month}",
+   year = "${8:year}",
+   note = "${9:note}",}
+${10:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>MANUAL</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+   <scope>text.bibtex</scope>
+</snippet>
