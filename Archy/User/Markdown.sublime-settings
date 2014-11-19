@@ -1,0 +1,12 @@
+{
+        "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
+        "font_face": "Latin Modern Mono",
+        "font_size": 12,
+        "extensions":
+        [
+                "md",
+                "mdown",
+                "txt",
+                "markdown"
+        ]
+}

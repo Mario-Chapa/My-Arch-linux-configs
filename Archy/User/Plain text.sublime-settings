@@ -1,0 +1,26 @@
+{
+
+    // Additional spacing at the top of each line, in pixels
+    "line_padding_top": 0,
+
+    // Additional spacing at the bottom of each line, in pixels
+    "line_padding_bottom": 0,
+
+    "draw_indent_guides": false,
+    // Set to true to removing trailing white space on save
+    "trim_trailing_white_space_on_save": false,
+
+    // "font_face":"Source Code Pro",  //Book Antiqua",
+    "font_face": "Latin Modern Mono",
+    "font_size" : 10,
+        "font_options":
+    [
+        // "bold",
+        "gray_antialias",
+        "subpixel_antialias"
+    ],
+
+	"draw_centered": true
+	//"font_size": 14
+
+}

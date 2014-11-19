@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+\bibitem{${1:tag}} ${2:authors}. ${3:name} ${4:year&place}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bib</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.tex.latex</scope>
+</snippet>

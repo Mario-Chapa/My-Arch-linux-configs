@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+@MISC{${1:key},
+	author = {${2:}},
+	title = {${3:}},
+	journal = {${4:}},
+	year = "${5:}",
+	note = "${6:}"
+	organization = "${7:}",
+   	address = "${8:}",
+   	edition = "${9:}",
+   	month = "${10:}",
+   	howpublished = {\url{${11:}}},
+   	note = "${12:}",}
+${13:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ARTICLE</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.bibtex</scope>
+</snippet>

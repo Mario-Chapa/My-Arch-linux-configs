@@ -1,0 +1,87 @@
+[
+    // Tab highlight button
+    {
+        "class": "tab_close_button",
+        "settings": ["highlight_modified_tabs"],
+        "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+        "layer0.texture": "Theme - Soda/Soda Light/tab-highlight-inactive.png"
+    },
+        {
+            "class": "tabset_control",
+            "tab_height": 18
+        },
+
+    {
+        "class": "quick_panel",
+        "font_face": "Monaco",
+        "row_padding": [5, 2],
+        "layer0.tint": [49, 52, 55],
+        "layer0.opacity": 1.0
+    },
+    {
+        "class": "quick_panel_row",
+        // "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row.png",
+        "layer0.inner_margin": [2, 2, 2, 2],
+        "layer0.opacity": 1.0
+    },
+    {
+        "class": "quick_panel_row",
+        "attributes": ["selected"],
+        // "layer0.texture": "Theme - Flatland/Flatland Dark/quick-panel-row-selected.png"
+    },
+    {
+        "class": "quick_panel_label",
+        "fg": [144, 146, 147, 255],
+        "match_fg": [1, 150, 233, 255],
+        "selected_fg": [255, 255, 255, 255], //selected foreground
+        "selected_match_fg": [1, 195, 155, 255]
+    },
+    {
+        "class": "quick_panel_path_label",
+        "fg": [104, 106, 107, 255],
+        "match_fg": [1, 130, 213, 255],
+        "selected_fg": [215, 215, 215, 255],
+        "selected_match_fg": [57, 60, 63, 255]
+    },
+    {
+        "class": "quick_panel_score_label",
+        "fg": [1, 151, 237, 255],
+        "selected_fg": [43, 151, 237, 255]
+    },
+
+
+    // CODE COMPLETION DROPDOWN
+//
+    {
+        "class": "popup_control",
+        "content_margin": [0, 0]
+    },
+    {
+        "class": "auto_complete",
+        "row_padding": [2, 2],
+        "layer0.tint": [30, 30, 30],
+        "layer0.opacity": 1.0,
+        "dark_content": true
+    },
+    {
+        "class": "auto_complete_label",
+        "fg": [140, 140, 140],
+        "match_fg": [5, 255, 255],
+        "bg": [6, 6, 6],
+        "selected_fg": [155, 155, 155],
+        "selected_match_fg": [5, 255, 255],
+        "selected_bg": [86, 86, 86]
+    },
+    // {
+    //     "class": "table_row",
+    //     "layer0.texture": "Theme - Flatland/Flatland Dark/code-completion-row-selected.png",
+    //     "layer0.opacity": 0.0,
+    //     "layer0.inner_margin": [1, 1]
+    // },
+    {
+        "class": "table_row",
+        "attributes": ["selected"],
+        "layer0.opacity": 1.0
+    }
+
+]

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+@INBOOK{${1:key},
+	author = {${2:author}},
+	title = {${3:title}},
+	edition = "${4:edition}",
+	publisher = "${5:publisher}",
+	year = "${6:year}",
+	chapter = "${7:chapter}",}
+${8:}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>BOOK</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.bibtex</scope>
+</snippet>

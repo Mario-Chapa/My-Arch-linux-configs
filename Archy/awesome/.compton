@@ -1,0 +1,13 @@
+inactive-opacity-override = true;
+inactive-dim = 0.2;
+shadow-exclude = "class_g = 'conky'";
+# Window type settings
+wintypes:
+{
+  conky = { fade = true; shadow = false; opacity = 0.75; focus = false; };
+  # fade: Fade the particular type of windows.
+  # shadow: Give those windows shadow
+  # opacity: Default opacity for the type of windows.
+  # focus: Whether to always consider windows of this type focused.
+};
+

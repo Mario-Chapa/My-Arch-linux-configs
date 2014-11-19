@@ -1,0 +1,54 @@
+[
+	{
+		"args":
+		{
+			"action_args": null,
+			"action_command": null,
+			"motion_args":
+			{
+				"extend": true,
+				"repeat": 1
+			},
+			"motion_clip_to_line": false,
+			"motion_command": "vi_move_to_hard_eol",
+			"motion_inclusive": true,
+			"motion_mode": 0
+		},
+		"command": "vi_eval"
+	},
+	{
+		"args":
+		{
+			"action_args": null,
+			"action_command": null,
+			"motion_args":
+			{
+				"by": "lines",
+				"extend": true,
+				"forward": true
+			},
+			"motion_clip_to_line": false,
+			"motion_command": "move",
+			"motion_inclusive": false,
+			"motion_mode": 0
+		},
+		"command": "vi_eval"
+	},
+	{
+		"args":
+		{
+			"action_args": null,
+			"action_command": null,
+			"motion_args":
+			{
+				"extend": true,
+				"repeat": 1
+			},
+			"motion_clip_to_line": true,
+			"motion_command": "vi_move_to_first_non_white_space_character",
+			"motion_inclusive": false,
+			"motion_mode": 0
+		},
+		"command": "vi_eval"
+	}
+]
