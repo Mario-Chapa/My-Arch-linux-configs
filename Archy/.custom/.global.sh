@@ -51,7 +51,7 @@ export EDITOR=vim
 
 alias ls='ls -X1sh --sort=extension --group-directories-first --color'
 alias lsa='ls -X1shA --sort=extension --group-directories-first --color'
-alias pacup='sudo pacmatic -Syu'
+alias pacup='sudo pacmatic -Syu;sudo prelink -afvR'
 alias nano='nano -xcS'
 alias cd..='cd ..'
 alias rm='rm -iv'

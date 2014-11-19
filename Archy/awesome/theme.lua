@@ -86,17 +86,6 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/defau
 
 local pathWallpaper = "/home/mario/.config/awesome/Wallpapers/"
 local nameWallpaper = {
- --	"Black.jpg",
- --	"Navi.jpg",
- 	-- "Rings.png",
- 	-- "Galaxy.png",
- 	-- "BHwallp.png",
- 	-- "Blueearth.png",
- 	-- "darkblue2.png",
-        -- "Moments.png",
-        -- "SS2_fix.png",
-        -- "Voyage.png"
-	--"Planets.png",
         "Darkspace.png",
         "Orbit.png",
         "Purple.png"
