@@ -9,7 +9,6 @@ export KEYTIMEOUT=1
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/mario/.zshrc'
 
-
 autoload -Uz colors compinit promptinit
 compinit
 promptinit

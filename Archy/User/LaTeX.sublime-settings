@@ -2,21 +2,11 @@
 	// Latex Tools
 	"cite-auto-trigger": "true",
     "cite_autocomplete_format": "{keyword}: {title}",
-	// Draws text centered in the window rather than left aligned
-	"draw_centered": true,
-    // The number of spaces a tab is considered equal to
-    "tab_size": 8,
-   // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": false,
-
-    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
-    // backspace insert/delete up to the next tabstop
-    "use_tab_stops": true,
 	// "font_face": "Bitstream Vera Sans mono",
 	// "font_face": "Verily Serif Mono",
 	// "font_face": "Courier Code",
     "font_face": "Latin Modern Mono",
-    "font_size" : 11,
+    // "font_size" : 11,
         "font_options":
     [
         // "bold",
@@ -28,25 +18,6 @@
 	"line_padding_top": 0,
 	// Additional spacing at the bottom of each line, in pixels
 	"line_padding_bottom": 0,
-	    // Enable auto complete to be triggered automatically when typing.
-    "auto_complete": true,
-
-    // The maximum file size where auto complete will be automatically triggered.
-    "auto_complete_size_limit": 99999999999,
-
-    // The delay, in ms, before the auto complete window is shown after typing
-    "auto_complete_delay": 50,
-
-        // Controls what scopes auto complete will be triggered in
-    "auto_complete_selector": "",
-
-	"auto_complete_commit_on_tab": true,
-	// Controls if auto complete is shown when snippet fields are active.
-    	// Only relevant if auto_complete_commit_on_tab is true.
-    	"auto_complete_with_fields": true,
-    		// Hides the fold buttons unless the mouse is over the gutter
-    	"fade_fold_buttons": false,
-
 	"highlight_line": true,
 
 	// Characters that are considered to separate words

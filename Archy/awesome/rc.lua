@@ -107,16 +107,18 @@ tags_2 = {
 	layout = { layouts[1], layouts[3], }
 }
 
+selected_paper = math.random(#beautiful.wallpaper)
 if screen.count == 2 then
 	tags[1] = awful.tag(tags.names,   1, tags.layout)
 	tags[2] = awful.tag(tags_2.names, 2, tags_2.layout)
+	gears.wallpaper.maximized(beautiful.wallpaper[selected_paper], 1, true)
+	gears.wallpaper.maximized(beautiful.wallpaper_projector, 2, true)
 else
 	tags[1] = awful.tag(tags.names, 1, tags.layout)
+	gears.wallpaper.maximized(beautiful.wallpaper[selected_paper], 1, true)
 end
 
 -- Wallpaper ramdomizer
-selected_paper = math.random(#beautiful.wallpaper)
-gears.wallpaper.maximized(beautiful.wallpaper[selected_paper], 1, true)
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -204,7 +206,7 @@ mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglis
 mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
 -- Create the wibox
-mywibox[s] = awful.wibox({ position = "bottom", screen = s })
+mywibox[s] = awful.wibox({ position = "top", screen = s })
 
 -- Widgets that are aligned to the left
 local left_layout = wibox.layout.fixed.horizontal()
@@ -243,36 +245,77 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
 	-- minimizing and "show desktop" trick
 	awful.key({ modkey, "Control" }, "n", awful.client.restore),
+
 	awful.key({ modkey }, "z",
+	  function ()
+	      local curtag
+	      local curtags = awful.tag.selectedlist()
+	      local client
+	      local clients
+	      local allminimized
+
+	      for x, curtag in pairs(curtags) do
+	          clients = curtag:clients()
+	          -- check if all clients are minimized
+	          allminimized = true
+	          for y, client in pairs(clients) do
+	              if client.minimized ~= true then
+	                  allminimized = false
+	                  break
+	              end
+	          end
+
+	          -- If at least one client isn't minimized, minimize all clients
+	          -- Otherwise unminimize all clients
+	          for y, client in pairs(clients) do
+	              if allminimized == true then
+	                  client.minimized = false
+	              else
+	                  client.minimized = true
+	              end
+	          end
+	      end
+	  end),
+
+	awful.key({ modkey }, "i",
 		function ()
 			local curtag
 			local curtags = awful.tag.selectedlist()
 			local client
 			local clients
-			local allminimized
 
 			for x, curtag in pairs(curtags) do
 				clients = curtag:clients()
-				-- check if all clients are minimized
-				for y, client in pairs(clients) do
-					if client.minimized == false then
-						allminimized = false
-						break
-					else
-						allminimized = true
-					end
-				end
+			end
 
 				-- If at least one client isn't minimized, minimize all clients
-				for y, client in pairs(clients) do
-					if allminimized == false then
-						client.minimized = true
 				-- Otherwise unminimize all clients
-					elseif allminimized == true then
+				for y, client in pairs(clients) do
+					if client.minimized ~= true then
+						client.minimized = true
+					end
+				end
+		end),
+
+
+	awful.key({ modkey }, "o",
+		function ()
+			local curtag
+			local curtags = awful.tag.selectedlist()
+			local client
+			local clients
+			for x, curtag in pairs(curtags) do
+				clients = curtag:clients()
+			end
+
+
+				-- If at least one client isn't minimized, minimize all clients
+				-- Otherwise unminimize all clients
+				for y, client in pairs(clients) do
+					if client.minimized == true then
 						client.minimized = false
 					end
 				end
-			end
 		end),
 
 	awful.key({ modkey,  }, "Left",   awful.tag.viewprev       ),
@@ -325,8 +368,8 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Shift"   }, "d",      function () awful.util.spawn("dolphin" ) end),
 	awful.key({ modkey, "Shift"   }, "p",      function () awful.util.spawn("subl3" ) end),
 	awful.key({ modkey            }, "s",      function () awful.util.spawn("synergy") end),
-	--    awful.key({ }, "#233",      function () awful.util.spawn("xbacklight -inc 10" ) end),
-	--    awful.key({ }, "#232",      function () awful.util.spawn("xbacklight -dec 10" ) end),
+	awful.key({ modkey }, "Up",      function () awful.util.spawn("xbacklight -inc 20" ) end),
+	awful.key({ modkey }, "Down",      function () awful.util.spawn("xbacklight -dec 20" ) end),
 	-- Shutdown, reboot, log out, etc.
 	awful.key({ modkey, "Control" }, "q",      function () awful.util.spawn("systemctl poweroff" ) end),
 	awful.key({ modkey, "Control" }, "r",      function () awful.util.spawn("systemctl reboot" ) end),
@@ -466,8 +509,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- run_once("xcompmgr", "-c -C -o.1 -t-5 -l-5 -r4.2")
 run_once("compton", "--backend glx --paint-on-overlay --vsync opengl-swc --glx-no-stencil --glx-no-rebind-pixmap --unredir-if-possible")
 run_once("conky")
-run_once("setxkbmap", "-layout latam")
+run_once("ksystraycmd --icon kmix kmix")
 awful.util.spawn_with_shell("sleep 1; /usr/bin/xmodmap /home/mario/.Xmodmap")
 -- run_once("amor")
 run_once("redshift", "-l 35:139")
-run_once("ksystraycmd --icon kmix kmix")
+run_once("setxkbmap", "-layout jp")

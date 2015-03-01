@@ -1,3 +1,5 @@
+# symphonic
+alias symphonic='java -jar /opt/symphonic/JSymphonic.jar'
 ### Networking aliases  #############################################
 #alias lanup='sudo ip link set wlp2s0 up'
 #alias langetip='sudo dhcpcd'
@@ -11,16 +13,17 @@
 #alias wlanhowto_bindWPA='echo "sudo wpa_supplicant -B -i wlp2s0 -c .wpas_configs/{filename}.conf"'
 
 #alias ligthsoff='xbacklight -dec 100'
-#alias backlightup='xbacklight -inc 10'
-#alias backlightdown='xbacklight -dec 10'
+# alias backlightup='xbacklight -inc 10'
+# alias backlightdown='xbacklight -dec 10'
 
-alias kblatam='setxkbmap -layout latam'
+# alias kblatam='setxkbmap -layout latam'
 # alias kbjp='setxkbmap -layout jp'
 # alias scrvertical='xrandr --output LVDS1 --rotate left'
 # alias scrnormal='xrandr --output LVDS1 --rotate normal'
 # alias capslockkill='xmodmap ~/.Xmodmap'
-#alias bkligth='sudo nano /sys/class/backlight/intel_backlight/brightness'
+# alias bkligth='sudo nano /sys/class/backlight/intel_backlight/brightness'
 
 # Wireless stuff here
 # source ~/.bin/FUN_alias_file.sh
 # alias wlangen='. ~/bin/wlangen'
+alias brutal='zandronum -file wads/brutalv19ee.pk3 wads/pipebombz.pk3 wads/vergatron.wad wads/pitoneitorv5.wad wads/200minvr.wad'

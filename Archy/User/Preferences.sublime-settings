@@ -1,9 +1,10 @@
 {
 	"always_show_minimap_viewport": true,
+	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_function_params": "all",
 	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
-	"auto_complete_with_fields": true,
+	"auto_complete_with_fields": false,
 	"caret_extra_bottom": 0,
 	"caret_extra_top": 0,
 	"caret_extra_width": 3,
@@ -20,21 +21,20 @@
 	[
 		"gray-antialias"
 	],
-	"font_size": 8,
+	"font_size": 13,
+	"git_status_bar": false,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"SublimeCodeIntel",
+		"Markdown",
 		"Pylinter",
-		"Theme - Flatland",
-		"LaTeXTools",
-		"Markdown"
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Theme - Flatland"
 	],
 	"ignored_words":
 	[
-		"90's",
-		"usepackage{palatino"
 	],
 	"indent_guide_options":
 	[

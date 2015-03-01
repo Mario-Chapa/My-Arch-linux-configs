@@ -12,7 +12,6 @@
 
     // "font_face":"Source Code Pro",  //Book Antiqua",
     "font_face": "Latin Modern Mono",
-    "font_size" : 10,
         "font_options":
     [
         // "bold",

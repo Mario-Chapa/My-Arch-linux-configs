@@ -6,7 +6,7 @@
         "gutter_theme": "Packages/SublimeLinter/gutter-themes/ProjectIcons/ProjectIcons.gutter-theme",
         "gutter_theme_excludes": [],
         "index_files": false,
-        "lint_mode": "save only",
+        "lint_mode": "manual",
         "linters": {
             "chktex": {
                 "@disable": false,
@@ -47,6 +47,7 @@
         },
         "mark_style": "stippled underline",
         "no_column_highlights_line": false,
+        "passive_warnings": false,
         "paths": {
             "linux": [],
             "osx": [],
@@ -59,7 +60,7 @@
         },
         "rc_search_limit": 3,
         "shell_timeout": 10,
-        "show_errors_on_save": false,
+        "show_errors_on_save": true,
         "show_marks_in_minimap": true,
         "syntax_map": {
             "PythonImproved": "python",

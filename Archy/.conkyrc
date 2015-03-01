@@ -106,8 +106,8 @@ alignment top_right
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
-gap_x 12
-gap_y 60
+gap_x 20
+gap_y 120
 
 # Subtract file system buffers from used memory?
 no_buffers yes
@@ -160,13 +160,13 @@ ${color lightSlateGray} ${font Ericsson GA628:style=Regular
 :size=32}$alignc${time %H:%M}
 ${voffset -30}${font Envy Code R:style=Regular:size=10}$alignc${time %A %d %b. %Y}
 #### System ##############################
-#${battery_percent BAT0}
+# ${battery_percent BAT1}
 ${voffset 5}${font monofur:bold:size=12}${color light gray}System ${font aulinsymbols:style=Regular:size=14}U${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
 ${voffset 4}${font Heydings Icons:style=Regular:size=16}T${voffset -3}${font monofur:size=12} ${uptime}
 ${font Heydings Icons:style=Regular:size=16}l${voffset -3}${font monofur:size=12} CPU: ${cpu cpu1}% ${voffset -35} $alignr${cpugraph 40,170 000000 0088CC}
 ${voffset -2}${font Heydings Icons:style=Regular:size=16}4${voffset -4}${font monofur:size=12} CPU temp: ${execi 60 sensors -u | grep temp2_input | awk -F: '{print $2}' | awk -F. '{print $1}'} °C ${font Heydings Icons:style=Regular:size=16}${color firebrick3}${voffset -5}${execi 60 sudo sh ~/.bin/Hightemp.sh}${font monofur:size=12}${color light gray}
-${font Heydings Icons:style=Regular:size=16}r${voffset -4}${font monofur:size=12} Energy Cell: $battery_percent%
-${alignr}${voffset -16}${battery_bar 10,80}${voffset -2} ${font aulinsymbols:style=Regular:size=14}${execi 60 zsh ~/.bin/BatteryInfo.sh}${font monofur:bold:size=1} .
+${font Heydings Icons:style=Regular:size=16}r${voffset -4}${font monofur:size=12} Energy Cell: ${battery_percent BAT1}%
+${alignr}${voffset -16}${battery_bar 10,80 BAT1 }${voffset -2} ${font aulinsymbols:style=Regular:size=14}${execi 60 zsh ~/.bin/BatteryInfo.sh}${font monofur:bold:size=1} .
 #### Resources ###########################
 ${font monofur:bold:size=12}${color light gray}Resources ${font aulinsymbols:style=Regular:size=12}W${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
 ${font Heydings Controls:style=Regular:size=16}q${voffset -4}${font monofur:size=12}${font monofur:size=12} RAM: $mem [$memperc%]$alignr${voffset 4}${membar 8,100}

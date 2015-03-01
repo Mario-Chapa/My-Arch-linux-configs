@@ -86,15 +86,16 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/defau
 
 local pathWallpaper = "/home/mario/.config/awesome/Wallpapers/"
 local nameWallpaper = {
-        "Darkspace.png",
-        "Orbit.png",
-        "Purple.png"
+        "orbit.png",
+        "space.png",
+        "ship.png"
 }
-
 theme.wallpaper = {}
 for i, name in ipairs(nameWallpaper) do
   theme.wallpaper[i] = pathWallpaper .. nameWallpaper[i]
 end
+
+theme.wallpaper_projector = pathWallpaper .. "800600.png"
 -- vertical_wallpaper_name = "NaviVertical.jpg"
 -- theme.vertical_wallpaper = pathWallpaper .. vertical_wallpaper_name
 

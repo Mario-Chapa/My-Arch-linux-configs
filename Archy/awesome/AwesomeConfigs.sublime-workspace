@@ -103,7 +103,23 @@
 			"file": "rc.lua",
 			"settings":
 			{
-				"buffer_size": 16355,
+				"buffer_size": 17554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mario/.zandronum/zandronum.ini",
+			"settings":
+			{
+				"buffer_size": 17060,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mario/.conkyrc",
+			"settings":
+			{
+				"buffer_size": 6290,
 				"line_ending": "Unix"
 			}
 		},
@@ -111,7 +127,15 @@
 			"file": "theme.lua",
 			"settings":
 			{
-				"buffer_size": 5347,
+				"buffer_size": 5399,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mario/bin/VGA-adjust2projector",
+			"settings":
+			{
+				"buffer_size": 94,
 				"line_ending": "Unix"
 			}
 		},
@@ -127,7 +151,7 @@
 			"file": "/home/mario/.zshrc",
 			"settings":
 			{
-				"buffer_size": 7281,
+				"buffer_size": 7280,
 				"line_ending": "Unix"
 			}
 		},
@@ -135,15 +159,7 @@
 			"file": "/home/mario/.custom/.global.sh",
 			"settings":
 			{
-				"buffer_size": 3274,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mario/.custom/.local.sh",
-			"settings":
-			{
-				"buffer_size": 1086,
+				"buffer_size": 3290,
 				"line_ending": "Unix"
 			}
 		},
@@ -151,7 +167,7 @@
 			"file": "/home/mario/.config/sublime-text-3/Packages/User/NaviSolarized (SL).tmTheme",
 			"settings":
 			{
-				"buffer_size": 49784,
+				"buffer_size": 50312,
 				"line_ending": "Unix"
 			}
 		},
@@ -159,7 +175,7 @@
 			"file": "/home/mario/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 1411,
+				"buffer_size": 1466,
 				"line_ending": "Unix"
 			}
 		},
@@ -167,7 +183,15 @@
 			"file": "/home/mario/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 			"settings":
 			{
-				"buffer_size": 4702,
+				"buffer_size": 4736,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mario/.custom/.local.sh",
+			"settings":
+			{
+				"buffer_size": 1091,
 				"line_ending": "Unix"
 			}
 		}
@@ -175,9 +199,33 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 164.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"ss R",
+				"Set Syntax: R"
+			],
+			[
+				"ss she",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"ss ",
+				"Set Syntax: R"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
 			[
 				"pro clo",
 				"Project: Close"
@@ -231,10 +279,6 @@
 				"Snippet: Markdown_header_(mdh1)"
 			],
 			[
-				":w",
-				":w - Save"
-			],
-			[
 				"pref",
 				"Preferences: Settings - User"
 			],
@@ -259,10 +303,6 @@
 				"Package Control: List Packages"
 			],
 			[
-				"close",
-				"Project: Close"
-			],
-			[
 				"sett",
 				"Preferences: Settings - Default"
 			],
@@ -275,10 +315,6 @@
 				"Set Syntax: Assembly x86 (NASM)"
 			],
 			[
-				"ss R",
-				"Set Syntax: R"
-			],
-			[
 				"s",
 				"Set Syntax: R"
 			],
@@ -288,10 +324,6 @@
 			],
 			[
 				"comm",
-				"Toggle Comment"
-			],
-			[
-				"com",
 				"Toggle Comment"
 			],
 			[
@@ -308,10 +340,6 @@
 			],
 			[
 				"ss sh",
-				"Set Syntax: Shell Script (Bash)"
-			],
-			[
-				"ss she",
 				"Set Syntax: Shell Script (Bash)"
 			],
 			[
@@ -449,6 +477,10 @@
 	],
 	"file_history":
 	[
+		"/run/media/mario/BIGBLUE/CodeC/gato.c",
+		"/home/mario/grub.cfg.bkp",
+		"/home/mario/.bin/BatteryInfo.sh",
+		"/home/mario/.conkyrc",
 		"/home/mario/.config/sublime-text-3/Packages/User/Shell-Unix-Generic.sublime-settings",
 		"/home/mario/.config/sublime-text-3/Packages/Python Improved/README.md",
 		"/home/mario/.config/sublime-text-3/Packages/WordCount/readme.md",
@@ -480,7 +512,6 @@
 		"/home/mario/.Xre",
 		"/home/mario/.config/sublime-text-3/Packages/User/BufferScroll.sublime-settings",
 		"/home/mario/.config/sublime-text-3/Packages/User/StatusBarTime.sublime-settings",
-		"/home/mario/.bin/BatteryInfo.sh",
 		"/home/mario/Research/IJNC/autoLBPM.tex",
 		"/home/mario/.conkyrc_vertical",
 		"/home/mario/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
@@ -500,7 +531,6 @@
 		"/home/mario/Papers/CVU/cv_10.tex",
 		"/home/mario/.config/awesome/rc.lua",
 		"/home/mario/.config/awesome/theme.lua",
-		"/home/mario/.conkyrc",
 		"/home/mario/.bin/.alias.sh",
 		"/home/mario/.bin/.custom.sh",
 		"/home/mario/.config/sublime-text-2/Packages/User/Shell-Unix-Generic.sublime-settings",
@@ -574,7 +604,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -588,6 +618,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"wallpaper_projector",
+			"wallpaper",
+			"screen",
+			"wallpapers",
+			"xmodmap",
+			"setxkbmap",
+			"latam",
+			"\"l\"",
+			"\"p\"",
+			"\"u\"",
+			"\"p\"",
+			"\"i\"",
 			"wallpaper",
 			"incomeAxis",
 			"buttons",
@@ -703,19 +745,7 @@
 			"~/.bin/wlan_connect_$1.sh",
 			"FILE",
 			"file",
-			"FILE",
-			"~/.bin/.wpas_configs/$1.conf",
-			"wpas_con",
-			"super",
-			"FILE_NAME",
-			"SSID",
-			"chapter",
-			"file_name",
-			"SSID",
-			"Section 8",
-			"font",
-			"edge",
-			"border"
+			"FILE"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -733,7 +763,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -742,7 +772,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16355,
+						"buffer_size": 17554,
 						"regions":
 						{
 							"mark":
@@ -752,8 +782,8 @@
 								"regions":
 								[
 									[
-										7096,
-										7096
+										7234,
+										7234
 									]
 								],
 								"scope": "mark"
@@ -762,8 +792,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								2888,
+								2888
 							]
 						],
 						"settings":
@@ -777,19 +807,81 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1940.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/mario/.zandronum/zandronum.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17060,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "shell-unix-generic",
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "a5c3b66c",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4275.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "/home/mario/.conkyrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2308,
+								2308
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "r",
+							"bs_sintax": "plain text",
+							"buffer_scroll_name": "a8d4ebdb",
+							"syntax": "Packages/R/R.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "theme.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5347,
+						"buffer_size": 5399,
 						"regions":
 						{
 							"mark":
@@ -809,27 +901,57 @@
 						"selection":
 						[
 							[
-								5216,
-								5216
+								4510,
+								4510
 							]
 						],
 						"settings":
 						{
-							"WordCountShouldRun": false,
 							"WordCountSyntax": "lua",
 							"bs_sintax": "lua",
 							"buffer_scroll_name": "4f05ee22",
 							"syntax": "Packages/Lua/Lua.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1360.0,
+						"translation.y": 1577.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
+					"file": "/home/mario/bin/VGA-adjust2projector",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								12
+							]
+						],
+						"settings":
+						{
+							"WordCountSyntax": "shell-unix-generic",
+							"bs_sintax": "shell-unix-generic",
+							"buffer_scroll_name": "1c916007",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/home/mario/.config/sublime-text-3/Packages/User/Soda Dark 3.sublime-theme",
 					"semi_transient": false,
 					"settings":
@@ -847,7 +969,6 @@
 						],
 						"settings":
 						{
-							"WordCountShouldRun": false,
 							"WordCountSyntax": "json",
 							"bs_sintax": "json",
 							"buffer_scroll_name": "af9f97aa",
@@ -859,24 +980,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "/home/mario/.zshrc",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7281,
+						"buffer_size": 7280,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4328,
+								4328
 							]
 						],
 						"settings":
@@ -890,27 +1011,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1364.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
 					"file": "/home/mario/.custom/.global.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3274,
+						"buffer_size": 3290,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3050,
+								3050
 							]
 						],
 						"settings":
@@ -923,59 +1044,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2205.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/home/mario/.custom/.local.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1017,
-								1017
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": false,
-							"WordCountSyntax": "shell-unix-generic",
-							"bs_sintax": "shell-unix-generic",
-							"buffer_scroll_name": "b4f1689a",
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "/home/mario/.config/sublime-text-3/Packages/User/NaviSolarized (SL).tmTheme",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 49784,
+						"buffer_size": 50312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								378,
-								378
+								5588,
+								5620
 							]
 						],
 						"settings":
@@ -987,28 +1076,28 @@
 							"syntax": "Packages/XML/XML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 9.0,
+						"translation.y": 3859.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "/home/mario/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1411,
+						"buffer_size": 1466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								856,
+								856
 							]
 						],
 						"settings":
@@ -1023,27 +1112,27 @@
 							"wrap_width": 0
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 268.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "/home/mario/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4702,
+						"buffer_size": 4736,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4076,
+								4076
 							]
 						],
 						"settings":
@@ -1059,11 +1148,43 @@
 							"word_wrap": false,
 							"wrap_width": 0
 						},
+						"translation.x": 40.0,
+						"translation.y": 931.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/mario/.custom/.local.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1091,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								616,
+								616
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"WordCountSyntax": "shell-unix-generic",
+							"bs_sintax": "shell-unix-generic",
+							"buffer_scroll_name": "b4f1689a",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1116,6 +1237,10 @@
 		"selected_items":
 		[
 			[
+				"theme",
+				"~/.config/awesome/theme.lua"
+			],
+			[
 				"lua",
 				"~/.config/awesome/rc.lua"
 			],
@@ -1125,10 +1250,6 @@
 			],
 			[
 				"",
-				"~/.config/awesome/theme.lua"
-			],
-			[
-				"theme",
 				"~/.config/awesome/theme.lua"
 			],
 			[
@@ -1198,7 +1319,7 @@
 			"_cmdline_cd": "/home/mario/.config/awesome"
 		}
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": false,
