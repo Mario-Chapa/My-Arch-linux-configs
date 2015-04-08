@@ -1,11 +1,11 @@
 {
-        "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
-        "font_face": "Latin Modern Mono",
-        "extensions":
-        [
-                "md",
-                "mdown",
-                "txt",
-                "markdown"
-        ]
+	"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme",
+	"extensions":
+	[
+		"md",
+		"mdown",
+		"markdown"
+	],
+	"font_face": "Latin Modern Mono",
+	"font_size": 12
 }

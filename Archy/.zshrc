@@ -9,19 +9,20 @@ export KEYTIMEOUT=1
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/mario/.zshrc'
 
+
 autoload -Uz colors compinit promptinit
 compinit
 promptinit
 colors
-PROMPT="[%T]%{$fg[gray]%}%BArchy%{$reset_color%}%{$fg[green]%}>>>%{$reset_color%} "
+PROMPT="[%T]%{$fg[green]%}%BFermi%{$reset_color%}%{$fg[green]%}>>>%{$reset_color%} "
 RPROMPT="%{$fg[cyan]%}|%~|%{$reset_color%}{%?}"
 
 precmd() {
   RPROMPT="%{$fg[cyan]%}|%~|%{$reset_color%}{%?}"
 }
 zle-keymap-select() {
-  PROMPT="[%T]Archy%{$fg[green]%}>>>%{$reset_color%} "
-  [[ $KEYMAP = vicmd ]] && PROMPT="%{$fg_bold[yellow]%}[ CMD ]%{$reset_color%}Archy%{$fg[green]%}>>>%{$reset_color%} "
+  PROMPT="[%T]#%{$fg[green]%}>>>%{$reset_color%} "
+  [[ $KEYMAP = vicmd ]] && PROMPT="%{$fg_bold[yellow]%}[ CMD ]%{$reset_color%}#%{$fg[green]%}>>>%{$reset_color%} "
   () { return $__prompt_status }
   zle reset-prompt
 }
@@ -30,7 +31,6 @@ zle-line-init() {
 }
 zle -N zle-keymap-select
 zle -N zle-line-init
-
 #prompt walters cyan
 # End of lines added by compinstall
 
@@ -87,13 +87,16 @@ zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
+# #custom stuff in this files
+# source ~/.bin/FUN_alias_file.sh
+# alias wlangen='. ~/bin/wlangen'
+
 ### Special keys
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
 
 key[Home]=${terminfo[khome]}
-
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
 key[Delete]=${terminfo[kdch1]}
@@ -148,6 +151,7 @@ if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
 
       ## This reverts the +/- operators.
       setopt pushdminus
+
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -158,8 +162,11 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
-export PATH=$PATH:/home/mario/:/root/.gem/ruby/2.1.0/bin/:~/bin
+export PATH=$PATH:/home/mario/bin
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+[ -n "$XTERM_VERSION" ] && transset-df -a 0.9 >/dev/null
 source ~/.custom/.global.sh
 source ~/.custom/.local.sh
+
+export PYTHONPATH=/usr/lib/python3.4/site-packages/
+xset b off

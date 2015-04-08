@@ -2,50 +2,47 @@
 	"always_show_minimap_viewport": true,
 	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
-	"auto_complete_function_params": "all",
-	"auto_complete_selector": "source - comment, meta.tag - punctuation.definition.tag.begin",
-	"auto_complete_with_fields": false,
+	"auto_complete_selector": "",
+	"auto_complete_with_fields": true,
 	"caret_extra_bottom": 0,
 	"caret_extra_top": 0,
-	"caret_extra_width": 3,
+	"caret_extra_width": 2,
 	"caret_style": "phase",
 	"color_scheme": "Packages/User/NaviSolarized (SL).tmTheme",
 	"color_scope_name": "text.plain",
+	"copy_with_empty_selection": false,
 	"draw_minimap_border": true,
-	"draw_outlined": false,
 	"draw_white_space": "selection",
-	"enable_telemetry": "enable",
 	"fade_fold_buttons": true,
 	"font_face": "Hermit",
 	"font_options":
 	[
-		"gray-antialias"
+		"gray_antialias"
 	],
-	"font_size": 13,
-	"git_status_bar": false,
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Markdown",
 		"Pylinter",
-		"SublimeCodeIntel",
-		"SublimeLinter",
-		"Theme - Flatland"
+		"SublimeLinter-ruby",
+		"Markdown"
 	],
 	"ignored_words":
 	[
+		"90's",
+		"usepackage{palatino"
 	],
 	"indent_guide_options":
 	[
 		"draw_active"
 	],
-	"line_padding_bottom": 0,
+	"index_files": false,
+	"line_padding_bottom": 1,
 	"line_padding_top": 0,
 	"margin": 1,
 	"save_on_focus_lost": true,
-	"scroll_speed": 1.0,
-	"show_encoding": true,
+	"scroll_speed": 0.9,
 	"show_full_path": false,
 	"show_tab_close_buttons": false,
 	"tab_size": 8,
@@ -55,5 +52,6 @@
 	"trim_trailing_white_space_on_save": true,
 	"update_check": false,
 	"vintage_start_in_command_mode": true,
+	"vintageous_use_ctrl_keys": false,
 	"wrap_width": 80
 }

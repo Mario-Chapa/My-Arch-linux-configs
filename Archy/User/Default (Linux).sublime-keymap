@@ -1,41 +1,35 @@
 [
-	// Macro for correct "Enter" in vintage
-	{ "keys": ["enter"],    "command": "run_macro_file",
-				"args": {"file": "Packages/User/vimEnter.sublime-macro"},
+
+	{ "keys":     ["enter"],    "command": "run_macro_file",
+				"args":    {"file": "Packages/User/vimEnter.sublime-macro"},
 				"context": [{"key": "setting.command_mode"}]},
 
+
+	{ "keys": ["ctrl+n"], "command": "advanced_new_file_new"},
+	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 10.0 } },
+	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -10.0 } },
 	{ "keys": ["ctrl+tab"], "command": "toggle_minimap" },
 	{ "keys": ["alt+right"], "command": "next_view" },
 	{ "keys": ["alt+left"], "command": "prev_view" },
 	{ "keys": ["ctrl+."], "command": "indent" },
 	{ "keys": ["ctrl+,"], "command": "unindent" },
-
+	{ "keys": ["f11"], "command": "clone_file" },
 	//Sublime Bookmarks
-	{ "keys": ["f2"], "command": "sublime_bookmark", "args" : { "type" : "toggle_line" } },
-	{ "keys": ["ctrl+b"],      "command": "sublime_bookmark", "args" : { "type" : "add" } },
-	{ "keys": ["ctrl+shift+b"], "command": "sublime_bookmark", "args" : { "type" : "remove" } },
-	{ "keys": ["ctrl+@"],  "command": "sublime_bookmark", "args" : { "type" : "goto" } },
-//	{ "keys": ["ctrl+down"], "command": "sublime_bookmark", "args" : { "type" : "goto_next" } },
-//	{ "keys": ["ctrl+up"], "command": "sublime_bookmark", "args" : { "type" : "goto_previous" } },
+	{         "keys": ["f2"],  "command": "sublime_bookmark", "args" : { "type" : "toggle_line" } },
+	// {         "keys": ["ctrl+shift+b"], "command": "sublime_bookmark", "args" : { "type" : "remove" } },
+	{         "keys": ["ctrl+f2"], "command": "sublime_bookmark", "args" : { "type" : "remove_all" } },
+	{         "keys": ["shift+f2"],  "command": "sublime_bookmark", "args" : { "type" : "goto" } },
+	{         "keys": ["ctrl+alt+up"], "command": "sublime_bookmark", "args" : { "type" : "goto_previous" } },
+	{         "keys": ["ctrl+alt+down"], "command": "sublime_bookmark", "args" : { "type" : "goto_next" } },
 
-	// Color scheme dark - ligth (ligth looks better in the projector)
-	{"keys": ["ctrl+0", "ctrl+0"],
-	"command": "set_setting",
-	"args":
-	{
-	    "setting": "color_scheme",
-	    "value": "Packages/User/NaviSolarized (SL).tmTheme"
-	}},
-	{"keys": ["ctrl+0", "ctrl+p"],
-	"command": "set_setting",
-	"args":
-	{
-	    "setting": "color_scheme",
-	    "value": "Packages/Color Scheme - Default/iPlastic.tmTheme"
-	}
-	},
+	// { "keys":  ["j", "k"], "command": "exit_insert_mode",
+	// "context":
+	// [
+	// 	{ "key": "setting.command_mode", "operand": false },
+	// 	{ "key": "setting.is_widget", "operand": false }
+	// ]
+	// },
 
-	// vi philosophi: use tab to walk over a closing )]}" etc
 	{ "keys": ["tab"], "command": "move", "args": {"by": "characters", "forward": true},
 	"context":
 	[
@@ -45,60 +39,62 @@
 	]
 	},
 
-	{ "keys": ["ctrl+space"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
-	{ "keys": ["ctrl+m", "m"], "command": "set_mark" },
-	{ "keys": ["ctrl+m", "s"], "command": "select_to_mark" },
-	{ "keys": ["ctrl+shift+m"], "command": "toggle_menu" },
+	{ "keys":  ["ctrl+space"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+	{ "keys":  ["ctrl+shift+m"], "command": "toggle_menu" },
+	{ "keys":  ["ctrl+m", "m"], "command": "set_mark" },
+	{ "keys":  ["ctrl+m", "s"], "command": "select_to_mark" },
+	// { "keys":  ["K"], "command": "insert", "args" : {"characters": "\n"},
+	// "context":
+	// [
+	// 	{ "key": "setting.command_mode", "operand": true },
+	// 	{ "key": "setting.is_widget", "operand": false }
+	// ]
+	// },
 
-	{ "keys": ["alt+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+	// Sublime linter
+	{ "keys": ["ctrl+k", "l"], "command": "sublimelinter_lint" },
+	{ "keys": ["ctrl+k", "n"], "command": "sublimelinter_goto_error", "args": {"direction": "next"} },
+	{ "keys": ["ctrl+k", "p"], "command": "sublimelinter_goto_error", "args": {"direction": "previous"} },
+	{ "keys": ["ctrl+k", "a"], "command": "sublimelinter_show_all_errors" },
+
+	// text aspect
 	{ "keys": ["alt+c"], "command": "toggle_setting", "args": {"setting": "draw_centered"}},
+	{ "keys": ["alt+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
 	{ "keys": ["alt+l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}},
 	{ "keys": ["alt+9"], "command": "set_setting", "args": {"setting": "wrap_width", "value": 80}},
 	{ "keys": ["alt+0"], "command": "set_setting", "args": {"setting": "wrap_width", "value": 0}},
 
+	//Folding
 	{ "keys": ["ctrl+k", "f"], "command": "fold" },
-
 	{ "keys": ["ctrl+k", "u"], "command": "unfold" },
 	{ "keys": ["ctrl+k", "9"], "command": "fold_all" },
 	{ "keys": ["ctrl+k", "0"], "command": "unfold_all" },
 
-
-	    // {"command": "sublime_jedi_goto", "keys": ["ctrl+right"],
-	    //     "context": [
-	    //         {"key": "selector", "operator": "equal", "operand":  "source.python - string - comment"}
-	    //     ]
-	    // },
-	    // {"command": "sublime_jedi_find_usages", "keys": ["ctrl+left"],
-	    //     "context": [
-	    //         {"key": "selector", "operator": "equal", "operand":  "source.python - string - comment"}
-	    //     ]
-	    // },
+		    {"command": "sublime_jedi_goto", "keys": ["ctrl+right"],
+	        "context": [
+	            {"key": "selector", "operator": "equal", "operand":  "source.python - string - comment"}
+	        ]
+	    },
+	    {"command": "sublime_jedi_find_usages", "keys": ["ctrl+left"],
+	        "context": [
+	            {"key": "selector", "operator": "equal", "operand":  "source.python - string - comment"}
+	        ]
+	    },
 		{"command": "sublime_jedi_params_autocomplete", "keys": ["("],
 	        "context": [
 	           {"key": "selector", "operator": "equal", "operand":  "source.python - string - comment"},
 	           {"key": "selection_empty", "operator": "equal", "operand": true, "match_all": true},
 	           {"key": "following_text", "operator": "regex_match", "operand": "^($| )", "match_all": true}
 	        ]
-	    },
+	    }
 
-	    // Sublime linter
-	// { "keys": ["ctrl+k", "l"], "command": "sublimelinter_lint" },
-    	{ "keys": ["ctrl+alt+down"], "command": "sublimelinter_goto_error", "args": {"direction": "next"} },
-	{ "keys": ["ctrl+alt+up"], "command": "sublimelinter_goto_error", "args": {"direction": "previous"} },
-	// { "keys": ["ctrl+alt+@"], "command": "sublimelinter_show_all_errors" },
-
-
-	 { "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 15.0 } },
-	 { "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -15.0 } }
-]
+	// Pylinter
 	// { "keys": ["ctrl+@"], "command": "pylinter", "args": {"action": "list"} },
+
+	// Code Intel
 	// { "keys": ["shift+ctrl+space"], "command": "code_intel_auto_complete" },
 	// { "keys": ["ctrl+up"], "command": "goto_python_definition"},
 	// { "keys": ["ctrl+left"], "command": "back_to_python_definition"}
-	// { "keys":  ["j", "k"], "command": "exit_insert_mode",
-	// "context":
-	// [
-	// 	{ "key": "setting.command_mode", "operand": false },
-	// 	{ "key": "setting.is_widget", "operand": false }
-	// ]
-	// },
+
+
+]

@@ -61,10 +61,9 @@ end
 beautiful.init("/home/mario/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "konsole"
+terminal = "xterm"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
-
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -103,16 +102,19 @@ modkey = "Mod4"
 local layouts = {
         awful.layout.suit.tile,
         awful.layout.suit.tile.bottom,
-        awful.layout.suit.magnifier,
-        awful.layout.suit.max.fullscreen }
+        }
 
 tags = {
-         names  = { " 1:Work",     " 2:Work",     " 3:Web",         " 4:Music",      " 5:Mail",  " 6:IRC"},
-         layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[3], layouts[3]}
+         names  = { " 01",     " 02",     " 03",    " 04",  " 05",    " 6:Mail",  " 7:IRC"},
+         layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1]}
      }
 
-    tags[1] = awful.tag(tags.names, 1, tags.layout)
-    gears.wallpaper.maximized(beautiful.wallpaper, 1, true)
+tags[1] = awful.tag(tags.names, 1, tags.layout)
+
+-- Wallpaper randomizer, uses the list passed from theme.lua
+selected_paper = math.random(#beautiful.wallpaper)
+gears.wallpaper.maximized(beautiful.wallpaper[selected_paper], 1, true)
+
 -- tags2 = {
 --         names  = { " 1:Web",    " 2:Mail",   " 3:Skype",  " 4:Music"  },
 --         layout = { layouts[1], layouts[3], layouts[3], layouts[2] }
@@ -215,7 +217,7 @@ for s = 1, screen.count() do
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
     mylayoutbox[s]:buttons(awful.util.table.join(
-                                                                                             awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
+                                                                                       awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
                                                                                              awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
                                                                                              awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
                                                                                              awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
@@ -263,37 +265,78 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
 
-awful.key({ modkey,           }, "z",
-    function ()
+    awful.key({ modkey }, "z",
+     function ()
+         local curtag
+         local curtags = awful.tag.selectedlist()
+         local client
+         local clients
+         local allminimized
+
+         for x, curtag in pairs(curtags) do
+             clients = curtag:clients()
+             -- check if all clients are minimized
+             allminimized = true
+             for y, client in pairs(clients) do
+                 if client.minimized ~= true then
+                     allminimized = false
+                     break
+                 end
+             end
+
+             -- If at least one client isn't minimized, minimize all clients
+             -- Otherwise unminimize all clients
+             for y, client in pairs(clients) do
+                 if allminimized == true then
+                     client.minimized = false
+                 else
+                     client.minimized = true
+                 end
+             end
+         end
+     end),
+
+
+    awful.key({ modkey }, "i",
+        function ()
             local curtag
             local curtags = awful.tag.selectedlist()
             local client
             local clients
-local allminimized
 
             for x, curtag in pairs(curtags) do
-    clients = curtag:clients()
-    for y, client in pairs(clients) do
-            if client.minimized == false then
-                    allminimized = false
-                    break
-            else
-                    allminimized = true
+                clients = curtag:clients()
             end
-    end
 
-    -- If at least one client isn't minimized, minimize all clients
-    for y, client in pairs(clients) do
-            if allminimized == false then
-                    client.minimized = true
+                -- If at least one client isn't minimized, minimize all clients
+                -- Otherwise unminimize all clients
+                for y, client in pairs(clients) do
+                    if client.minimized ~= true then
+                        client.minimized = true
+                    end
+                end
+        end),
 
-    -- Otherwise unminimize all clients
-            elseif allminimized == true then
-                    client.minimized = false
+
+    awful.key({ modkey }, "o",
+        function ()
+            local curtag
+            local curtags = awful.tag.selectedlist()
+            local client
+            local clients
+            for x, curtag in pairs(curtags) do
+                clients = curtag:clients()
             end
-    end
-            end
-end),
+
+
+                -- If at least one client isn't minimized, minimize all clients
+                -- Otherwise unminimize all clients
+                for y, client in pairs(clients) do
+                    if client.minimized == true then
+                        client.minimized = false
+                    end
+                end
+        end),
 
 awful.key({ modkey,  }, "Right",   awful.tag.viewnext       ),
 awful.key({ modkey,  }, "Left",  awful.tag.viewprev       ),
@@ -336,14 +379,11 @@ awful.key({ modkey, "Shift" }, "d",      function () awful.util.spawn("dolphin" 
 awful.key({ modkey, "Shift" }, "p",      function () awful.util.spawn("subl3" ) end),
 awful.key({ modkey, "Shift" }, "v",      function () awful.util.spawn("kmix" ) end),
 awful.key({ modkey, "" }, "s",      function () awful.util.spawn("synergy" ) end),
-awful.key({ modkey}, "t",      function () awful.util.spawn("cool-old-term") end),
         -- body
 
 awful.key({ modkey, "Control" }, "q",      function () awful.util.spawn("systemctl poweroff" ) end),
 awful.key({ modkey, "Control" }, "r",      function () awful.util.spawn("systemctl reboot" ) end),
 awful.key({ modkey, "Control" }, "s",      function () awful.util.spawn("systemctl suspend" ) end),
-
-
 
 awful.key({ modkey, "Shift" }, "r", awesome.restart),
 awful.key({ modkey, "Shift"   }, "q", awesome.quit),
@@ -405,8 +445,8 @@ awful.key({ modkey}, "End",   nil, function ()  os.execute("xdotool key --delay 
 
 awful.key({ modkey,           }, "m",
                 function (c)
-                                c.maximized_horizontal = not c.maximized_horizontal
-                                c.maximized_vertical   = not c.maximized_vertical
+                                c.maximized_horizontal = false --not c.maximized_horizontal
+                                c.maximized_vertical   = false --not c.maximized_vertical
                 end)
 
 )
@@ -414,7 +454,7 @@ awful.key({ modkey,           }, "m",
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 6 do
+for i = 1, 7 do
 globalkeys = awful.util.table.join(globalkeys,
 awful.key({ modkey }, "#" .. i + 9,
     function ()
@@ -461,44 +501,44 @@ root.keys(globalkeys)
 -- {{{ Rules
 awful.rules.rules = {
     -- All clients will match this rule.
-    { rule = { },
-            properties = { border_width = beautiful.border_width,
-                                                                     border_color = beautiful.border_normal,
-                                                                     focus = awful.client.focus.filter,
-                                                                     keys = clientkeys,
-                                                                    buttons = clientbuttons } },
-    -- { rule = { class = "thunderbird" },
-    --         properties = { tag = tags[1][2] } },
-    -- { rule = { class = "chromium" },
-    --         properties = { tag = tags[1][1] } },
+   { rule = { },
+   properties = { border_width = beautiful.border_width,
+   border_color = beautiful.border_normal,
+   focus = awful.client.focus.filter,
+   keys = clientkeys,
+   buttons = clientbuttons } },
     { rule = { class = "pinentry" },
             properties = { floating = true } },
-     { rule = { class = "Copying" },
-            properties = { floating = true } },
+     { rule = { name = "Copying" },
+            properties = {floating = true} },
     { rule = { class = "gimp" },
             properties = { floating = true } },
-
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
-}
+    }
 -- }}}
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
+client.connect_signal("focus", function(c)
+                              c.border_color = beautiful.border_focus
+                              c.opacity = 1
+                           end)
+client.connect_signal("unfocus", function(c)
+                                c.border_color = beautiful.border_normal
+                                c.opacity = 0.9
+                             end)
 client.connect_signal("manage", function (c, startup)
     -- Enable sloppy focus
-    c:connect_signal("mouse::enter", function(c)
-                    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-                                    and awful.client.focus.filter(c) then
-                                    client.focus = c
-                    end
-    end)
+    -- c:connect_signal("mouse::enter", function(c)
+    --                 if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+    --                                 and awful.client.focus.filter(c) then
+    --                                 client.focus = c
+    --                 end
+    -- end)
 
     if not startup then
                     -- Set the windows at the slave,
                     -- i.e. put it at the end of others instead of setting it master.
-                    -- awful.client.setslave(c)
+                    awful.client.setslave(c)
 
                     -- Put windows in a smart way, only if they does not set an initial position.
                     if not c.size_hints.user_position and not c.size_hints.program_position then
@@ -556,6 +596,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+-- Run once function, to avoid multiple instances of a program
+-- running when restarting lua.
 function run_once(prg,arg_string,screen)
     if not prg then
         do return nil end
@@ -571,17 +613,17 @@ end
 
 -- run_once("sudo dhcpcd")
 awful.util.spawn_with_shell("setxkbmap -layout jp")
-run_once("compton", "--backend glx --paint-on-overlay --vsync opengl-swc --glx-no-stencil --glx-no-rebind-pixmap --unredir-if-possible --blur-background --blur-kern 11x11gaussian;11x11gaussian -i 0.75")
 run_once("conky","--config=/home/mario/.conkyrc-awesome")
 run_once("kmix")
 run_once("redshift")
-awful.util.spawn_with_shell("sleep 3; /usr/bin/xmodmap /home/mario/.Xmodmap")
+run_once("compton","--backend glx --blur-background --blur-kern 11x11gaussian;11x11gaussian -i 0.75")
+awful.util.spawn_with_shell("sleep 1; /usr/bin/xmodmap /home/mario/.Xmodmap")
 
 
 
 -- run_once("amor")
 -- run_once("xcompmgr","-c -C -o.1 -t-5 -l-5 -r4.2")
+  -- run_once("compton", "--backend glx --paint-on-overlay --vsync opengl-swc --glx-no-stencil --glx-no-rebind-pixmap --unredir-if-possible --blur-background --blur-kern 11x11gaussian;11x11gaussian -i 0.75")
 -- awful.util.spawn_with_shell("xmodmap ~/.Xmodmap")
 -- run_once("xautolock","-time 15 -locker \"xscreensaver-command -activate\"")
--- run_once("compton","--backend glx --blur-background --blur-kern 11x11gaussian;11x11gaussian -i 0.75")
 -- python -c 'from ctypes import *; X11 = cdll.LoadLibrary("libX11.so.6"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'

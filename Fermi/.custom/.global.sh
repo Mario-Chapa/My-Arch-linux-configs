@@ -51,13 +51,14 @@ export EDITOR=vim
 
 alias ls='ls -X1sh --sort=extension --group-directories-first --color'
 alias lsa='ls -X1shA --sort=extension --group-directories-first --color'
-alias pacup='sudo pacmatic -Syu'
+alias pacup='sudo pacmatic -Syu;sudo prelink -afvR'
 alias nano='nano -xcS'
 alias cd..='cd ..'
 alias rm='rm -iv'
+alias mv='mv -iv'
 alias pacinstall='pacup && sudo pacmatic -S'
 alias grep='grep --color=auto'
-alias tree='tree -hFC -L 1'
+alias tree='tree -hFC --dirsfirst -L 1'
 alias R='R --quiet'
 alias less='less -N --prompt=">>>"'
 alias ffplay='ffplay -loglevel quiet'
@@ -108,16 +109,6 @@ ren () {
 		return 128
 	fi
 }
-# Package libreoffice does not fork to background
-office () {
-	if [[ -f $1 ]]; then
-		libreoffice $1 &> ~/.log_office&
-	else
-		echo $fg_bold[red]"Error:\t"$fg_bold[blue]"File does not exist :s";
-		return 128
-	fi
-}
-# comment
 vp () {
 	if [[ -f $1 ]]; then
 		mupdf $1 &> ~/.log_mupdf&
@@ -126,3 +117,13 @@ vp () {
 		return 128
 	fi
 }
+# Package libreoffice does not fork to background
+# office () {
+# 	if [[ -f $1 ]]; then
+# 		libreoffice $1 &> ~/.log_office&
+# 	else
+# 		echo $fg_bold[red]"Error:\t"$fg_bold[blue]"File does not exist :s";
+# 		return 128
+# 	fi
+# }
+# comment

@@ -1,29 +1,29 @@
-# symphonic
-alias symphonic='java -jar /opt/symphonic/JSymphonic.jar'
-### Networking aliases  #############################################
-#alias lanup='sudo ip link set wlp2s0 up'
-#alias langetip='sudo dhcpcd'
+# R related
+alias R='R --quiet'
+R_LIBS=~/.data/Rpackages/
 
-#alias wlanscan='sudo iw dev wlp2s0 scan'
-#alias wlanfindSSID='sudo iw dev wlp2s0 scan | grep SSID'
-#alias wlancheck='sudo iw dev wlp2s0 link'
+# trackinvertaxis
+# alias trackinvertaxis='xinput set-int-prop "Kensington Kensington Slimblade Trackball" "Evdev Axis Inversion" 8 1 1'
 
-#alias wlanhowto_WEP='echo "sudo iw dev wlp2s0 connect [SSID] key 0:[pass]"'
-#alias wlanhowto_genWPAconfig='echo "wpa_passphrase [SSID] [pass] > .wpas_configs/{filename}.conf"'
-#alias wlanhowto_bindWPA='echo "sudo wpa_supplicant -B -i wlp2s0 -c .wpas_configs/{filename}.conf"'
+## Quick cd aliases
+alias cdredux='cd /home/mario/Programming/SHOC/src/opencl/level1/reduction'
 
-#alias ligthsoff='xbacklight -dec 100'
-# alias backlightup='xbacklight -inc 10'
-# alias backlightdown='xbacklight -dec 10'
+# easy archy shutdown after sync.
+alias archyoff="ssh -t Archy 'systemctl poweroff'"
+alias SyncPoweroff='unison research;archyoff'
 
-# alias kblatam='setxkbmap -layout latam'
-# alias kbjp='setxkbmap -layout jp'
-# alias scrvertical='xrandr --output LVDS1 --rotate left'
-# alias scrnormal='xrandr --output LVDS1 --rotate normal'
-# alias capslockkill='xmodmap ~/.Xmodmap'
-# alias bkligth='sudo nano /sys/class/backlight/intel_backlight/brightness'
+#youtube dl stuff
+alias yt-audio='youtube-dl -f bestaudio -x --no-playlist'
+alias yt-video='youtube-dl -f bestvideo --no-playlist'
 
-# Wireless stuff here
-# source ~/.bin/FUN_alias_file.sh
-# alias wlangen='. ~/bin/wlangen'
-alias brutal='zandronum -file wads/brutalv19ee.pk3 wads/pipebombz.pk3 wads/vergatron.wad wads/pitoneitorv5.wad wads/200minvr.wad'
+alias cpucheckfreq 'cat /proc/cpuinfo gp MHz'
+alias cpusetperf 'sudo cpupower frequency-set -g performance'
+alias cpusetsave 'sudo cpupower frequency-set -g powersave'
+alias cpuwatchfreq "watch grep \'cpu MHz\' /proc/cpuinfo"
+## name=\c[q6]verga\c[q8].\c[g5]tron\c-
+# BTSX Ep 2
+# '/usr/bin/zandronum' '-connect' '192.99.6.150:15140' '-iwad' '/home/mario/.zandronum/doom2.wad' '-file' '/home/mario/.doomseeker/btsx_e2a.wad' '-file' '/home/mario/.doomseeker/btsx_e2b.wad' '-file' '/home/mario/.doomseeker/btsxe2-cd-liquidpatch.v2.wad' '-file' '/home/mario/.doomseeker/complex-doom.v25b2.pk3' '-file' '/home/mario/.doomseeker/complex-classes-addon.v3a2.pk3' '-file' '/home/mario/.doomseeker/complex-doom-justammo.v3.wad' '-file' '/home/mario/.doomseeker/btsxe2-palette.wad' '-file' '/home/mario/.doomseeker/NewTextColours1_170.pk3' '+cl_hidecountry' '1'
+# Valiant
+# '/usr/bin/zandronum' '-connect' '192.99.6.150:15082' '-iwad' '/home/mario/.zandronum/doom2.wad' '-file' '/home/mario/.doomseeker/valiantrc2.wad' '-file' '/home/mario/.doomseeker/complex-doom.v25b2.pk3' '-file' '/home/mario/.doomseeker/complex-classes-addon.v3a2.pk3' '-file' '/home/mario/.doomseeker/cd-minigun-enhancement.wad' '-file' '/home/mario/.doomseeker/complex-doom-justammo.v3.wad' '-file' '/home/mario/.doomseeker/valiant-complexpatch.v3.wad' '-file' '/home/mario/.doomseeker/NewTextColours1_170.pk3' '+cl_hidecountry' '1'
+# Stronghold
+# '/usr/bin/zandronum' '-connect' '192.99.6.150:15042' '-iwad' '/home/mario/.zandronum/doom2.wad' '-file' '/home/mario/.doomseeker/strnghld_v1.pk3' '-file' '/home/mario/.doomseeker/strnghld_violence_v4.pk3' '-file' '/home/mario/.doomseeker/StrongHoldEditsNFixesv1.1PatchV4.1.pk3' '-file' '/home/mario/.doomseeker/StrongholdItemsV7.1.pk3' '-file' '/home/mario/.doomseeker/strongholduntitledpatchv1.66.pk3' '-file' '/home/mario/.doomseeker/NewTextColours1_170.pk3' '+cl_hidecountry' '1'

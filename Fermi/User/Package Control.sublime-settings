@@ -1,4 +1,7 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"BufferScroll",
@@ -9,6 +12,7 @@
 		"Missing Palette Commands",
 		"NASM x86 Assembly",
 		"OpenCL",
+		"Package Control",
 		"PackageResourceViewer",
 		"PlainTasks",
 		"Pylinter",
@@ -16,7 +20,6 @@
 		"SideBarEnhancements",
 		"Status Bar Time",
 		"Sublime Bookmarks",
-		"SublimeCodeIntel",
 		"SublimeGit",
 		"SublimeLinter",
 		"SublimeLinter-chktex",

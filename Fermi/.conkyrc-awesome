@@ -160,15 +160,13 @@ ${voffset -40}${font Envy Code R:style=Regular:size=22}$alignc${time %A %d %b. %
 ${voffset 15}${font MumboSSK:bold:size=22}${color light gray}System ${font aulinsymbols:style=Regular:size=24}U${font monofur:bold:size=20} ${color DarkSlateGray}${hr 3}${color light gray}
 ${voffset 1}${font Heydings Icons:style=Regular:size=26}T${voffset -5}${font monofur:size=22} ${uptime}
 ${voffset 1}${font Heydings Icons:style=Regular:size=26}l${voffset -5}${font monofur:size=22} CPU: ${cpu cpu1}% ${voffset -60} $alignr${cpugraph 80,270 000000 00DDFF}
-${voffset 5}${font Heydings Icons:style=Regular:size=26}4${voffset -5}${font monofur:size=22} CPU Temp: ${acpitemp}${iconv_start UTF-8 ISO_8859-1}.0 °${iconv_stop}C
-${voffset 5}${font Heydings Icons:style=Regular:size=26}4${voffset -5}${font monofur:size=22} GPU Temp: ${execi 30 nvidia-settings -q gpucoretemp | awk /gpu:0/{'print $4'}}0 ${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+${voffset -10}${font Heydings Icons:style=Regular:size=26}4${voffset -5}${font monofur:size=22} CPU: ${acpitemp}${iconv_start UTF-8 ISO_8859-1}.0 °${iconv_stop}C     GPU: ${execi 30 nvidia-settings -q gpucoretemp | awk /gpu:0/{'print $4'}}0${iconv_start UTF-8 ISO_8859-1} °${iconv_stop}C
 
 #### Resources ###########################
 ${font MumboSSK:bold:size=22}${color light gray}Resources ${font aulinsymbols:style=Regular:size=22}W${font monofur:bold:size=20} ${color DarkSlateGray}${hr 3}${color light gray}
 ${font Heydings Controls:style=Regular:size=26}q${voffset -4}${font monofur:size=22}${font monofur:size=22:bold} RAM: ${font monofur:size=22}$mem ${voffset -2}[$memperc%]$alignr${voffset 4}${membar 20,150}
 ${voffset -14}${font monofur:size=2} ${font aulinsymbols:style=Regular:size=26}Y${font monofur:size=22:bold} Home: ${font monofur:size=22}$alignc ${fs_used /home} $alignr ${fs_free_perc /home}% free
 ${voffset -14}${font monofur:size=2} ${font aulinsymbols:style=Regular:size=26}Y${font monofur:size=22:bold} Syst: ${font monofur:size=22}$alignc ${fs_used /} $alignr ${fs_free_perc /}% free
-
 #### Process #############################
 ${font MumboSSK:bold:size=18}${color light gray}Top Processes ${color DarkSlateGray}${hr 3}
 ${font monofur:bold:size=16}${color light gray}$alignc CPU Usage

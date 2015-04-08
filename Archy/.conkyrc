@@ -1,4 +1,4 @@
-# Aulin's Style Conky
+# Aulin Style Conky
 
 # set to yes if you want Conky to be forked in the background
 #background no
@@ -10,7 +10,6 @@ use_xft yes
 #xftfont Ericsson GA628:style=Regular:size=12
 #xftfont Anonymous Pro:style=Regular:size=10
 xftfont monofur:style=Regular:size=12
-#xftfont Liberation mono:style=Regular:size=12
 #### Icons Fonts
 #Heydings Icons:style=Regular
 #Heydings Controls:style=Regular
@@ -42,7 +41,7 @@ out_to_console no
 #mail_spool $MAIL
 
 # Update interval in seconds
-update_interval 3
+update_interval 5
 
 # This is the number of times Conky will update before quitting.
 # Set to zero to run forever.
@@ -50,10 +49,12 @@ total_run_times 0
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
-own_window_class conky
+own_window_title conky
+
 # If own_window is yes, you may use type normal, desktop or override
-own_window_type override
-#own_window_argb_visual yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_argb_value 0
 
 # Use pseudo transparency with own_window?
 own_window_transparent yes
@@ -68,8 +69,8 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 
 # Minimum size of text area
-minimum_size 280 5
-maximum_width 348
+minimum_size 580 5
+maximum_width 380
 
 # Draw shades?
 draw_shades no
@@ -99,15 +100,15 @@ default_outline_color grey
 
 # Text alignment, other possible values are commented
 #alignment top_left
-alignment top_right
+alignment  top_right
 #alignment bottom_left
 #alignment bottom_right
 #alignment none
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
-gap_x 20
-gap_y 120
+gap_x 12
+gap_y 35
 
 # Subtract file system buffers from used memory?
 no_buffers yes
@@ -146,40 +147,64 @@ use_spacer no
 
 # none, xmms, bmp, audacious, infopipe (default is none)
 #xmms_player none
-#short_units no
-#lua_load ~/.conky/lua/clock.lua
-#lua_draw_hook_pre clock_rings
+
 # stuff after 'TEXT' will be formatted on screen
 
 TEXT
 #### Title #####################
-${font openlogos:size=25}B  ${voffset -8}${font monofur:bold:size=13} $sysname $kernel${font aulinsymbols:style=Regular:size=16} A
+${font openlogos:size=30}B  ${voffset -13}${font monofur:bold:size=18} $sysname $kernel${font aulinsymbols:style=Regular:size=21} A
 ${color DarkSlateGray}${hr 4}${color light gray}
 #### Clock #####################
 ${color lightSlateGray} ${font Ericsson GA628:style=Regular
-:size=32}$alignc${time %H:%M}
-${voffset -30}${font Envy Code R:style=Regular:size=10}$alignc${time %A %d %b. %Y}
+:size=58}$alignc${time %H:%M}
+${voffset -30}${font Envy Code R:style=Regular:size=17}$alignc${time %A %d %b. %Y}
 #### System ##############################
-# ${battery_percent BAT1}
 ${voffset 5}${font monofur:bold:size=12}${color light gray}System ${font aulinsymbols:style=Regular:size=14}U${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
 ${voffset 4}${font Heydings Icons:style=Regular:size=16}T${voffset -3}${font monofur:size=12} ${uptime}
-${font Heydings Icons:style=Regular:size=16}l${voffset -3}${font monofur:size=12} CPU: ${cpu cpu1}% ${voffset -35} $alignr${cpugraph 40,170 000000 0088CC}
-${voffset -2}${font Heydings Icons:style=Regular:size=16}4${voffset -4}${font monofur:size=12} CPU temp: ${execi 60 sensors -u | grep temp2_input | awk -F: '{print $2}' | awk -F. '{print $1}'} °C ${font Heydings Icons:style=Regular:size=16}${color firebrick3}${voffset -5}${execi 60 sudo sh ~/.bin/Hightemp.sh}${font monofur:size=12}${color light gray}
-${font Heydings Icons:style=Regular:size=16}r${voffset -4}${font monofur:size=12} Energy Cell: ${battery_percent BAT1}%
-${alignr}${voffset -16}${battery_bar 10,80 BAT1 }${voffset -2} ${font aulinsymbols:style=Regular:size=14}${execi 60 zsh ~/.bin/BatteryInfo.sh}${font monofur:bold:size=1} .
+${font Heydings Icons:style=Regular:size=16}l${voffset -3}${font monofur:size=12} CPU: ${cpu cpu1}% ${voffset -35} $alignr${cpugraph 40,170}
+
 #### Resources ###########################
 ${font monofur:bold:size=12}${color light gray}Resources ${font aulinsymbols:style=Regular:size=12}W${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
 ${font Heydings Controls:style=Regular:size=16}q${voffset -4}${font monofur:size=12}${font monofur:size=12} RAM: $mem [$memperc%]$alignr${voffset 4}${membar 8,100}
-${voffset -14}${font monofur:size=2} ${font aulinsymbols:style=Regular:size=16}Y${font monofur:size=12} SSD: $alignc ${fs_used /home}/${fs_size /home} $alignr ${fs_free_perc /home}% free
+${voffset -14}${font monofur:size=2} ${font aulinsymbols:style=Regular:size=16}Y${font monofur:size=12} HDD: $alignc ${fs_used /home}/${fs_size /home} $alignr ${fs_free_perc /home}% free
 
 #### Process #############################
 ${font monofur:bold:size=12}${color light gray}Top Processes ${color DarkSlateGray}${hr 2}
-$alignc${font monofur:bold:size=12}${color light gray}CPU time
-${color white}$font${top name 1}${alignr}${top cpu 1} %
-$font${top name 2}${alignr}${top cpu 2} %
-$font${top name 3}${alignr}${top cpu 3} %
-$alignc${font monofur:bold:size=12}${color light gray}Memory Hoarders
-${color white}$font${top_mem name 1}${alignr}${top_mem mem 1} %
-$font${top_mem name 2}${alignr}${top_mem mem 2} %
-$font${top_mem name 3}${alignr}${top_mem mem 3} %
-${color DarkSlateGray}${hr 2}
+${font monofur:bold:size=12}${color light gray}$alignc CPU Usage
+${top name 1}${alignr}${top cpu 1}%
+${top name 2}${alignr}${top cpu 2}%
+${top name 3}${alignr}${top cpu 3}%
+${font monofur:bold:size=12}${color light gray}$alignc RAM usage
+${top_mem name 1}${alignr}${top mem 1}%
+${top_mem name 2}${alignr}${top mem 2}%
+${top_mem name 3}${alignr}${top mem 3}%
+
+
+# TEXT
+# #### Title #####################
+# ${font openlogos:size=30}B  ${voffset -13}${font monofur:bold:size=18} $sysname $kernel${font aulinsymbols:style=Regular:size=21} A
+# ${color DarkSlateGray}${hr 4}${color light gray}
+# #### Clock #####################
+# ${color lightSlateGray} ${font Ericsson GA628:style=Regular
+# :size=58}$alignc${time %H:%M}
+# ${voffset -30}${font Envy Code R:style=Regular:size=12}$alignc${time %A %d %b. %Y}
+# #### System ##############################
+# ${voffset 5}${font monofur:bold:size=12}${color light gray}System ${font aulinsymbols:style=Regular:size=14}U${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
+# ${voffset 4}${font Heydings Icons:style=Regular:size=16}T${voffset -3}${font monofur:size=12} ${uptime}
+# ${font Heydings Icons:style=Regular:size=16}l${voffset -3}${font monofur:size=12} CPU: ${cpu cpu1}% ${voffset -35} $alignr${cpugraph 40,170}
+
+# #### Resources ###########################
+# ${font monofur:bold:size=12}${color light gray}Resources ${font aulinsymbols:style=Regular:size=12}W${font monofur:bold:size=10} ${color DarkSlateGray}${hr 2}${color light gray}
+# ${font Heydings Controls:style=Regular:size=16}q${voffset -4}${font monofur:size=12}${font monofur:size=12} RAM: $mem [$memperc%]$alignr${voffset 4}${membar 8,100}
+# ${voffset -14}${font monofur:size=2} ${font aulinsymbols:style=Regular:size=16}Y${font monofur:size=12} HDD: $alignc ${fs_used /home}/${fs_size /home} $alignr ${fs_free_perc /home}% free
+
+# #### Process #############################
+# ${font monofur:bold:size=12}${color light gray}Top Processes ${color DarkSlateGray}${hr 2}
+# ${font monofur:bold:size=12}${color light gray}$alignc CPU Usage
+# ${top name 1}${alignr}${top cpu 1}%
+# ${top name 2}${alignr}${top cpu 2}%
+# ${top name 3}${alignr}${top cpu 3}%
+# ${font monofur:bold:size=12}${color light gray}$alignc RAM usage
+# ${top_mem name 1}${alignr}${top mem 1}%
+# ${top_mem name 2}${alignr}${top mem 2}%
+# ${top_mem name 3}${alignr}${top mem 3}%

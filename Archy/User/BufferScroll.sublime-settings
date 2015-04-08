@@ -1,5 +1,5 @@
 {
-        "version": 7,
+	"version": 7,
         /* this is used for allowing to use more than 1 colour scheme at the same time in different views */
         "remember_color_scheme": false,
 

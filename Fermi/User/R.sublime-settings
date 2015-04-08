@@ -1,5 +1,5 @@
 	{
-		"font_face": "AverageMono",
 		// "font_size": 16,
-		"word_wrap": "true"
+                // "font_face": "AverageMono",
+                "font_face": "Source Code Pro"
 	}

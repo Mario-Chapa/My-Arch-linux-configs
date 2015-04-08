@@ -1,12 +1,11 @@
 {
     "user": {
-        "debug": false,
+        "debug": true,
         "delay": 0.25,
         "error_color": "D02000",
         "gutter_theme": "Packages/SublimeLinter/gutter-themes/ProjectIcons/ProjectIcons.gutter-theme",
         "gutter_theme_excludes": [],
-        "index_files": false,
-        "lint_mode": "manual",
+        "lint_mode": "background",
         "linters": {
             "chktex": {
                 "@disable": false,
@@ -28,16 +27,11 @@
                 "args": [],
                 "builtins": "",
                 "excludes": [],
-                "ignore": "E221,E501",
+                "ignore": "",
                 "jobs": "1",
                 "max-complexity": -1,
                 "max-line-length": null,
                 "select": ""
-            },
-            "lua": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
             },
             "ruby": {
                 "@disable": false,
@@ -47,7 +41,6 @@
         },
         "mark_style": "stippled underline",
         "no_column_highlights_line": false,
-        "passive_warnings": false,
         "paths": {
             "linux": [],
             "osx": [],
@@ -60,7 +53,7 @@
         },
         "rc_search_limit": 3,
         "shell_timeout": 10,
-        "show_errors_on_save": true,
+        "show_errors_on_save": false,
         "show_marks_in_minimap": true,
         "syntax_map": {
             "PythonImproved": "python",

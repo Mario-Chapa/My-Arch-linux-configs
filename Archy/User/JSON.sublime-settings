@@ -1,7 +1,3 @@
-{ // false true
-	"save_on_focus_lost": false,
-	// Draws text centered in the window rather than left aligned
-	"draw_centered": true,
-	// Set to false to prevent line numbers being drawn in the gutter
-	"line_numbers": true
+{
+		"save_on_focus_lost": false
 }

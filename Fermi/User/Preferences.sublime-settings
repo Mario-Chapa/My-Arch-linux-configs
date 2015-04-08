@@ -1,5 +1,6 @@
 {
 	"always_show_minimap_viewport": true,
+	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
 	"auto_complete_selector": "",
 	"auto_complete_with_fields": true,
@@ -18,14 +19,14 @@
 	[
 		"gray_antialias"
 	],
-	"font_size": 10,
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Markdown",
+		"Pylinter",
 		"SublimeLinter-ruby",
-		"Pylinter"
+		"Markdown"
 	],
 	"ignored_words":
 	[

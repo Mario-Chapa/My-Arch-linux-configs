@@ -164,8 +164,9 @@ man() {
 }
 export PATH=$PATH:/home/mario/bin
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+[ -n "$XTERM_VERSION" ] && transset-df -a 0.9 >/dev/null
 source ~/.custom/.global.sh
 source ~/.custom/.local.sh
 
 export PYTHONPATH=/usr/lib/python3.4/site-packages/
+xset b off

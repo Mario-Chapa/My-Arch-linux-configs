@@ -1,11 +1,9 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 theme = {}
 
-theme.font = "Consolas 9"
--- theme.font = "Terminus 8"
+theme.font = "Consolas 12"
+theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
+theme.menu_height = 20
+theme.menu_width  = 400
 
 theme.bg_normal          = "#101010"
 theme.fg_normal          = "#26ABF2"
@@ -15,16 +13,16 @@ theme.bg_urgent          = "#3f3f3f"
 theme.fg_urgent          = "#e34c10"
 theme.bg_minimize        = "#101010"
 theme.fg_minimize        = "#008282"
-theme.bg_systray         = theme.bg_normal
 theme.tasklist_bg_normal = "#101010"
 theme.tasklist_fg_normal = "#0888AA"
 theme.tasklist_bg_focus  = "#101010"
 theme.tasklist_fg_focus  = "#00FFFF"
+theme.border_normal      = "#3f3f3f"
+theme.border_focus       = "#00a6dc"
+theme.border_marked      = "#cc9393"
+theme.bg_systray         = theme.bg_normal
+theme.border_width       = 1
 
-theme.border_width  = 1
-theme.border_normal = "#3f3f3f00"
-theme.border_focus  = "#00a6dc50"
-theme.border_marked = "#cc939300"
 
  -- theme.taglist_fg_focus = "~/.config/awesome/taglist_bg_focus.png"
 -- theme.topbar_path
@@ -46,27 +44,26 @@ theme.taglist_squares_unsel = "/home/mario/.config/awesome/figs/darkarrowmini.pn
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png"
-theme.menu_height = 20
-theme.menu_width  = 100
 
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
-local paperdir = "/home/mario/.config/awesome/"
 
--- theme.wallpaper = paperdir .. "AsaryW.png"
--- theme.wallpaper = paperdir .. "FNevulaW.png"
-theme.wallpaper    = paperdir .. "UranusW.png"
 
--- theme.wallpaper = paperdir .. "DarkSpaceW.png"
--- theme.wallpaper = paperdir .. "BinaryW.png"
--- theme.wallpaper = paperdir .. "FEarthW.png"
--- theme.wallpaper = paperdir .. "NeptuneW.png"
--- theme.wallpaper = paperdir .. ".png"
+-- Wallpaper list
+local pathWallpaper = "/home/mario/.config/awesome/"
+local nameWallpaper = {
+        "AsaryW.png",
+        "FNevulaW.png",
+        "UranusW.png"
+        }
 
--- theme.wallpaper2 = "Holegimp.jpg"
+theme.wallpaper = {}
+for i, name in ipairs(nameWallpaper) do
+  theme.wallpaper[i] = pathWallpaper .. nameWallpaper[i]
+end
+
 
 local pathLayoutImg = "/home/mario/.config/awesome/layouticon/"
 -- You can use your own layout icons like this:
@@ -80,9 +77,6 @@ theme.awesome_icon = "/usr/share/awesome/themes/sky/awesome-icon.png"
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
-
-
-
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

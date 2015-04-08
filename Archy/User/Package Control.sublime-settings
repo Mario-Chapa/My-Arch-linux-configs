@@ -18,13 +18,16 @@
 		"Pylinter",
 		"Python Improved",
 		"SideBarEnhancements",
+		"Status Bar Time",
 		"Sublime Bookmarks",
 		"SublimeGit",
 		"SublimeLinter",
 		"SublimeLinter-chktex",
 		"SublimeLinter-flake8",
+		"SublimeLinter-ruby",
 		"Theme - Flatland",
 		"Theme - Soda",
+		"Theme - Sodarized",
 		"VAlign",
 		"WordCount"
 	]
